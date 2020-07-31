@@ -10,7 +10,7 @@ This branch contains the content for the CPS 342 Final.
 
 Here I am aiming to create a live gauge of various data from my car using the **obd** Python library and a bluetooth obdII scanner. Further plans include a website that will log important data such as speeding, trouble codes, overheating, and so on. The current issue with that is I do not have the means of having internet connection in my car as of right now. 
 
-Current status of the project is I am able to have the gauges working but it needs cleaning up and I recently obtained a 2010 dell computer from work that I plan on turning into a web server to host a website for the PI to feed information to. I want to do it this way so the information is always accessible even after the car and the pi are powered down. 
+Current status of the project is I am able to have the gauges working but it needs cleaning up and I recently obtained a 2010 dell computer running Ubuntu 20.04 that I fixed from work that I plan on turning into a web server to host a website for the PI to feed information to. I want to do it this way so the information is always accessible even after the car and the pi are powered down. 
 
 **Materials**
 
