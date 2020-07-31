@@ -27,12 +27,14 @@ Current status of the project is..
   
 <br />
 <br />
+
 **Setup Steps**
 
 
 	
 <br />
 <br />
+
 &nbsp; 1\. **Personal Information**:
 	   
 &nbsp; &nbsp; &nbsp; Name: *Beau Richter*
