@@ -7,29 +7,6 @@ ports =  obd.scan_serial()
 print (ports)
 connection = obd.OBD()
 
-def getRPM():
-    cmd = obd.commands.RPM
-    response = connection.query(cmd)
-    rpm0 = str(response.value)
-    rpm = rpm0[0:5]
-    rpmText.clear()
-    rpmText.append(rpm)
-    rpmText.after(1, getRPM)
-
-def getSpd():
-    cmd1 = obd.commands.SPEED
-    cmd2 = obd.commands.RPM
-    response1 = connection.query(cmd1)
-    response2 = connection.query(cmd2)
-    rpm0 = str(response2.value)
-    rpm = rpm0[0:5]
-    rpmText.clear()
-    rpmText.append(rpm)
-    spd0 = str(response1.value.to("mph"))
-    spd = spd0[0:3]
-    spdText.clear()
-    spdText.append(spd)
-    spdText.after(1, getSpd)
 
 def getCool():
     cmd = obd.commands.COOLANT_TEMP
@@ -40,23 +17,33 @@ def getCool():
     coolText.append(cool)
     coolext.after(1000, getCool)
 
-def getCool():
-    cmd = obd.commands.COOLANT_TEMP
-    response = connection.query(cmd)
-    cool0 = str(response.value)
+def update():
+    cmd1 = obd.commands.SPEED
+    cmd2 = obd.commands.RPM
+    cmd3 = obd.commands.COOLANT_TEMP
+    cmd4 = obd.commands.RUN_TIME
+    response1 = connection.query(cmd1)
+    response2 = connection.query(cmd2)
+    response3 = connection.query(cmd3)
+    response4 = connection.query(cmd4)
+    rpm0 = str(response2.value) #RPM
+    rpm = rpm0[0:5]
+    rpmText.clear()
+    rpmText.append(rpm)
+    spd0 = str(response1.value.to("mph"))   #SPEED
+    spd = spd0[0:3]
+    spdText.clear()
+    spdText.append(spd)
+    cool0 = str(response3.value)  #COOLANT TEMP
     cool = cool0 +" *C"
     coolText.clear()
     coolText.append(cool)
-    coolText.after(1000, getCool)
-
-def getTime():
-    cmd = obd.commands.RUN_TIME
-    response = connection.query(cmd)
-    time0 = str(response.value)
+    time0 = str(response4.value)   # RUN TIME
     time = time0 +" *Seconds"
     runText.clear()
     runText.append(time)
-    runText.after(1000, getTime)
+    spdText.after(1, update)
+
 
 app = App(title="obd App", layout = "grid", width = 800)
 
@@ -70,7 +57,7 @@ speedoMeter = Text(app, text="    Speed (mph)  ", size=30 ,grid = [1,0])
 spdBox = Box(app, width = 400, height = 80, grid = [1,1])
 spdBox.set_border(4, "black")
 spdText = Text(spdBox, text = "0", size = 30, align = "bottom")
-spdText.after(1, getSpd)
+#spdText.after(1, getSpd)
 
 coolMeter = Text(app, text="Coolant Temp  = ", size=25 ,grid = [0,3])
 coolText = Text(app, text = "80 *C", size = 25, grid = [1,3])
@@ -78,6 +65,6 @@ coolText = Text(app, text = "80 *C", size = 25, grid = [1,3])
 
 runTime = Text(app, text="Car Runtime  = ", size=25 ,grid = [0,4])
 runText = Text(app, text = "0 Seconds", size = 25, grid = [1,4])
-#runText.after(1000, getTime)
+runText.after(1, update)
 
 app.display()
