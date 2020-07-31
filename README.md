@@ -10,7 +10,7 @@ This branch contains the content for the CPS 342 Final.
 
 Here I am aiming to create a live gauge of various data from my car using the **obd** Python library and a bluetooth obdII scanner. Further plans include a website that will log important data such as speeding, trouble codes, overheating, and so on. The current issue with that is I do not have the means of having internet connection in my car as of right now. 
 
-Current status of the project is..
+Current status of the project is I am able to have the gauges work separately, but still am working on the means of having them all work together on the same page.
 
 **Materials**
 
@@ -30,7 +30,30 @@ Current status of the project is..
 
 **Setup Steps**
 
-
+1\. Download python and the needed libraries. 
+	sudo apt install python3-pip
+	sudo pip3 install obd
+	sudo pip3 install guizero
+	
+2\. Download bluetooth in console
+	I have found that the bluetooth on the taskbar in the standard raspberry pi desktop does not allow you to full connect as you need to trust the device. It is less of a headache to do it in the console.
+	
+	1. bluetoothctl
+	
+	2. power on
+	
+	3. agent on
+	
+	4. scan on
+	From here you should be able to pick the obd2 scanner out from the crowd as it usually has OBD in the name
+	
+	5. Using the MAC address you just found run 'pair xx-xx-xx-xx-xx-xx' and then 'trust xx-xx-xx-xx-xx-xx'
+	
+	6. And finally outside of the bluetooth command line run 'sudo rfcomm bind rfcomm0 xx-xx-xx-xx-xx-xx' 
+		This should have your obd2 bluetooth adapter ready to go
+3\. I have 'obd.logger.setLevel(obd.logging.DEBUG)' running at the top of the program so if you do have trouble connecting this will give you some error messages that will make it easier to troubleshoot. 
+	
+	
 	
 <br />
 <br />
