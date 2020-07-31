@@ -15,12 +15,14 @@ Current status of the project is I am able to have the gauges work separately, b
 **Materials**
 
 1\. **ELM327 OBDII Scanner**
+
+<img src="https://www.carscanner.info/wp-content/uploads/2018/07/badelm2-300x300.jpg" width="300" height="300">
   
-  Please be mindful that this is infact an OBDII scanner with the ELM327 microcontroller, other OBDII scanners may not work. Does not have to necessarily be Bluetooth but it does make things a bit cleaner.
+  Please be mindful that you purchase an OBDII scanner with the ELM327 microcontroller, other OBDII scanners may not work and if they do, it won't be without a lot of modifications whether it be physically to the adapter or to the python obd package software. It does not have to necessarily be Bluetooth but it does make things a bit cleaner. The one I purchased is the clear blue one you see above which is on of the more popular choices on amazon.
   
 2\. **Raspberry Pi 3B / 4**
   
-  You can get away with older, but in my case I am using the 4 and the built in Bluetooth makes things easier. I am also using the raspbian desktop environment as opposed to the console for this project as it makes it a bit easier to work with the gui. 
+  You can get away with older, but in my case I am using the 4 and the built in Bluetooth makes things easier. I am also using the Raspbian Desktop environment as opposed to Raspbian Lite for this project as it makes it a bit easier to work with the gui. 
   
 3\. **A screen for the Pi**
 
@@ -29,6 +31,8 @@ Current status of the project is I am able to have the gauges work separately, b
 I am using a 4inch LCD Touchscreen from Miuzel for this project. Having a small screen with touch function makes things easier to debug and work with but not necessary.
   
 4\. **12 volt power converter** so you can run the pi from the car
+	
+There are many different versions of this sold all over, I do not have a good recommendation for this as the one I purchased is quite terrible. 
   
 <br />
 <br />
