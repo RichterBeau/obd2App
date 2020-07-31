@@ -14,16 +14,19 @@ Current status of the project is I am able to have the gauges work separately, b
 
 **Materials**
 
-1\. ELM327 OBDII Scanner
+1\. **ELM327 OBDII Scanner**
+  
   Please be mindful that this is infact an OBDII scanner with the ELM327 microcontroller, other OBDII scanners may not work. Does not have to necessarily be Bluetooth but it does make things a bit cleaner.
   
-2\. Raspberry Pi 3B / 4
+2\. **Raspberry Pi 3B / 4**
+  
   You can get away with older, but in my case I am using the 4 and the built in Bluetooth makes things easier
   
-3\. A screen for the Pi
+3\. **A screen for the Pi**
+  
   I am using a 4inch LCD Touchscreen from Miuzel for this project. Having a small screen with touch function makes things easier to debug and work with but not necessary.
   
-4\. 12 volt power converter for the car
+4\. **12 volt power converter** so you can run the pi from the car
   
 <br />
 <br />
