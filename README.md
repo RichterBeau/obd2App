@@ -52,8 +52,11 @@ Current status of the project is I am able to have the gauges work separately, b
 	6. And finally outside of the bluetooth command line run 'sudo rfcomm bind rfcomm0 xx-xx-xx-xx-xx-xx' 
 		This should have your obd2 bluetooth adapter ready to go
 3\. I have 'obd.logger.setLevel(obd.logging.DEBUG)' running at the top of the program so if you do have trouble connecting this will give you some error messages that will make it easier to troubleshoot. 
-	
-	
+
+4\. Download this repository to the pi, using 'git clone https://github.com/RichterBeau/obd2App.git' command in a folder of your choosing. 
+
+5\. And finally run the program using 'python obd.py' 
+		
 	
 <br />
 <br />
