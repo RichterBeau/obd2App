@@ -1,8 +1,7 @@
 import obd
-import PIL
 import threading
 from guizero import App,Text,Box
-from PIL import Image
+
 obd.logger.setLevel(obd.logging.DEBUG)
 ports =  obd.scan_serial()
 print (ports)
@@ -52,7 +51,8 @@ def getTime():
     runText.clear()
     runText.append(time)
     runText.after(1000, getTime)
-    
+
+obd.logger.setLevel(obd.logging.DEBUG)
 
 app = App(title="obd App", layout = "grid", width = 800)
 
