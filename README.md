@@ -13,6 +13,7 @@ Here I am aiming to create a live gauge of various data from my car using the **
 Current status of the project is..
 
 **Materials**
+
 1\. ELM327 OBDII Scanner
   Please be mindful that this is infact an OBDII scanner with the ELM327 microcontroller, other OBDII scanners may not work. Does not have to necessarily be Bluetooth but it does make things a bit cleaner.
   
@@ -24,8 +25,14 @@ Current status of the project is..
   
 4\. 12 volt power converter for the car
   
+<br />
+<br />
+**Setup Steps**
+
 
 	
+<br />
+<br />
 &nbsp; 1\. **Personal Information**:
 	   
 &nbsp; &nbsp; &nbsp; Name: *Beau Richter*
