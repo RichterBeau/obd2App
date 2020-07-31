@@ -52,8 +52,6 @@ def getTime():
     runText.append(time)
     runText.after(1000, getTime)
 
-obd.logger.setLevel(obd.logging.DEBUG)
-
 app = App(title="obd App", layout = "grid", width = 800)
 
 rpmMeter = Text(app, text="    RPM  ", size=30, grid = [0,0])
