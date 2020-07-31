@@ -20,11 +20,13 @@ Current status of the project is I am able to have the gauges work separately, b
   
 2\. **Raspberry Pi 3B / 4**
   
-  You can get away with older, but in my case I am using the 4 and the built in Bluetooth makes things easier
+  You can get away with older, but in my case I am using the 4 and the built in Bluetooth makes things easier. I am also using the raspbian desktop environment as opposed to the console for this project as it makes it a bit easier to work with the gui. 
   
 3\. **A screen for the Pi**
-  
-  I am using a 4inch LCD Touchscreen from Miuzel for this project. Having a small screen with touch function makes things easier to debug and work with but not necessary.
+
+<img src="https://www.miuzeipro.com/wp-content/uploads/2019/01/MC21-35-1-600x600.jpg" width="300" height="300">
+
+I am using a 4inch LCD Touchscreen from Miuzel for this project. Having a small screen with touch function makes things easier to debug and work with but not necessary.
   
 4\. **12 volt power converter** so you can run the pi from the car
   
@@ -37,8 +39,20 @@ Current status of the project is I am able to have the gauges work separately, b
 	sudo apt install python3-pip
 	sudo pip3 install obd
 	sudo pip3 install guizero
+
+2\. Plugin and download the drivers for the touch screen.
+	The Miuzel case I use isn't the niecst looking but is relatively straight forward to build and comes with a nice little plug to go from the mini hdmi of the Pi to the hdmi port of the screen. The steps to download the drivers is as follows,
 	
-2\. Download bluetooth in console
+	1. git clone https://github.com/waveshare/LCD-show.git 
+	
+	2. cd /LCD-show
+	
+	3. ./LCD4-800x480-show
+	
+	4. From here your pi should appear on the small screen with touchscreen functionality. The touchscreen however only works with the Raspbian desktop.
+
+
+3\. Download bluetooth in console
 	I have found that the bluetooth on the taskbar in the standard raspberry pi desktop does not allow you to full connect as you need to trust the device. It is less of a headache to do it in the console.
 	
 	1. bluetoothctl
@@ -54,11 +68,11 @@ Current status of the project is I am able to have the gauges work separately, b
 	
 	6. And finally outside of the bluetooth command line run 'sudo rfcomm bind rfcomm0 xx-xx-xx-xx-xx-xx' 
 		This should have your obd2 bluetooth adapter ready to go
-3\. I have the obd package's debug running in the program so if you do have trouble connecting this will give you some error messages that will give you some insight into why.
+4\. I have the obd package's debug running in the program so if you do have trouble connecting this will give you some error messages that will give you some insight into why.
 
-4\. Download this repository to the pi, using 'git clone https://github.com/RichterBeau/obd2App.git' command in a folder of your choosing. 
+5\. Download this repository to the pi, using 'git clone https://github.com/RichterBeau/obd2App.git' command in a folder of your choosing. 
 
-5\. And finally run the program using 'python obd.py' 
+6\. And finally run the program using 'python obd.py' 
 		
 	
 <br />
